@@ -1,0 +1,51 @@
+{
+  "name": "Trevixia",
+  "legalName": "Trevixia Technology",
+  "slogan": "Inspired by Nature. Built for Technology",
+  "type": "IT Product Based Company",
+  "description": "Trevixia is an IT product-based startup that builds elegant, resilient software products. Our name is inspired by the Trevesia palmata — the snowflake plant — a symbol of growth, resilience, and quiet strength.",
+  "shortDescription": "We build software products that are elegant, resilient, and alive with innovation.",
+  "founded": "2024",
+  "industry": "Information Technology & Software",
+  "location": {
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "country": "India",
+    "full": "Chennai, Tamil Nadu, India"
+  },
+  "contact": {
+    "email": "trevixia.tech@gmail.com",
+    "website": "https://trevixia.com"
+  },
+  "socials": {
+    "twitter": "https://twitter.com/trevixia",
+    "linkedin": "https://linkedin.com/company/trevixia",
+    "instagram": "https://instagram.com/trevixia",
+    "github": "https://github.com/trevixia-technology"
+  },
+
+  "brand": {
+    "plantName": "Snowflake Plant",
+    "plantSpecies": "Trevesia palmata",
+    "plantDescription": "The Trevesia palmata — commonly known as the snowflake plant — is a striking tropical species known for its large, deeply lobed, snowflake-shaped leaves. Native to the Himalayas and Southeast Asia, it thrives in diverse conditions while maintaining its unique beauty."
+  },
+  "mission": "To build software products that matter — solutions that are not just technically brilliant, but thoughtfully designed to create lasting impact.",
+  "values": [
+    {
+      "title": "Growth",
+      "description": "We grow steadily, just like the snowflake plant — with patience, intention, and resilience."
+    },
+    {
+      "title": "Innovation",
+      "description": "We question the status quo and build forward-thinking solutions that push boundaries."
+    },
+    {
+      "title": "Craft",
+      "description": "Every pixel and every line of code is a deliberate act of care. Quality is non-negotiable."
+    },
+    {
+      "title": "Transparency",
+      "description": "We build trust through openness — with our team, our partners, and our community."
+    }
+  ]
+}
