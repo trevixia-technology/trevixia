@@ -1,66 +1,47 @@
 import { Link } from 'react-router-dom'
-import { RiLeafLine, RiTwitterXFill, RiLinkedinFill, RiInstagramLine, RiGithubFill } from 'react-icons/ri'
+import {
+  RiGithubLine, RiLinkedinBoxLine, RiTwitterXLine
+} from 'react-icons/ri'
 import company from '../../data/company.json'
 import styles from './Footer.module.css'
+
+const links = [
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Products', to: '/products' },
+  { label: 'Contact', to: '/contact' },
+]
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles['footer-decoration']} />
-      <div className="container">
-        <div className={styles['footer-grid']}>
-          <div className={styles['footer-brand']}>
-            <h3>
-              <span className={styles['footer-brand-icon']}>
-                <RiLeafLine />
-              </span>
-              Trevixia
-            </h3>
-            <p>
-              {company.slogan}. {company.shortDescription}{' '}
-              Based in {company.location.full}.
-            </p>
+      <div className={`container ${styles.inner}`}>
+        <div className={styles.top}>
+          <div className={styles.brand}>
+            <Link to="/" className={styles.logo}>{company.name}</Link>
+            <p className={styles.tagline}>{company.slogan}</p>
           </div>
 
-          <div className={styles['footer-col']}>
-            <h4>Navigate</h4>
-            <Link to="/">Home</Link>
-            <Link to="/about">About Us</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/contact">Contact</Link>
-          </div>
+          <nav className={styles.nav}>
+            {links.map((l) => (
+              <Link key={l.to} to={l.to} className={styles['nav-link']}>
+                {l.label}
+              </Link>
+            ))}
+          </nav>
 
-          <div className={styles['footer-col']}>
-            <h4>Company</h4>
-            <Link to="/about">Our Story</Link>
-            <Link to="/about">Team</Link>
-            <Link to="/about">Careers</Link>
-            <Link to="/contact">Partner With Us</Link>
-          </div>
-
-          <div className={styles['footer-col']}>
-            <h4>Connect</h4>
-            <a href={`mailto:${company.contact.email}`}>{company.contact.email}</a>
-            <p style={{ color: 'rgba(232,245,232,0.7)', fontSize: '0.95rem', maxWidth: '100%' }}>
-              {company.location.full}
-            </p>
+          <div className={styles.socials} style={{ display: 'none' }}>
+            <a href="#" aria-label="GitHub"><RiGithubLine /></a>
+            <a href="#" aria-label="LinkedIn"><RiLinkedinBoxLine /></a>
+            <a href="#" aria-label="Twitter"><RiTwitterXLine /></a>
           </div>
         </div>
 
-        <div className={styles['footer-bottom']}>
-          <p>&copy; {new Date().getFullYear()} Trevixia. All rights reserved.</p>
-          <div className={styles['footer-socials']}>
-            {[
-              { icon: <RiTwitterXFill />, href: company.socials.twitter },
-              { icon: <RiLinkedinFill />, href: company.socials.linkedin },
-              { icon: <RiInstagramLine />, href: company.socials.instagram },
-              { icon: <RiGithubFill />, href: company.socials.github },
-            ].map((s, i) => (
-              <a key={i} href={s.href} className={styles['footer-social-link']} target="_blank" rel="noopener noreferrer">
-                {s.icon}
-              </a>
-            ))}
-          </div>
+        <div className={styles.bottom}>
+          <span>&copy; {new Date().getFullYear()} {company.name}. All rights reserved.</span>
+          <span className={styles.location}>
+            {company.location.city}, {company.location.country}
+          </span>
         </div>
       </div>
     </footer>

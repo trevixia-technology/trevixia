@@ -3,8 +3,8 @@
   "legalName": "Trevixia Technology",
   "slogan": "Inspired by Nature. Built for Technology",
   "type": "IT Product Based Company",
-  "description": "Trevixia is an IT product-based startup that builds elegant, resilient software products. Our name is inspired by the Trevesia palmata — the snowflake plant — a symbol of growth, resilience, and quiet strength.",
-  "shortDescription": "We build software products that are elegant, resilient, and alive with innovation.",
+  "description": "Trevixia is a product-focused software company that designs and engineers robust digital solutions for modern businesses. Based in Chennai, India, we combine deep technical expertise with thoughtful product design to deliver software that scales.",
+  "shortDescription": "Product-focused software engineering from Chennai, India.",
   "founded": "2024",
   "industry": "Information Technology & Software",
   "location": {
@@ -23,29 +23,55 @@
     "instagram": "https://instagram.com/trevixia",
     "github": "https://github.com/trevixia-technology"
   },
-
   "brand": {
     "plantName": "Snowflake Plant",
     "plantSpecies": "Trevesia palmata",
-    "plantDescription": "The Trevesia palmata — commonly known as the snowflake plant — is a striking tropical species known for its large, deeply lobed, snowflake-shaped leaves. Native to the Himalayas and Southeast Asia, it thrives in diverse conditions while maintaining its unique beauty."
+    "plantDescription": "The Trevesia palmata, known as the snowflake plant, is a tropical species recognized for its large, deeply lobed, snowflake-shaped leaves. Native to the Himalayas and Southeast Asia, it thrives in diverse conditions while maintaining structural integrity and beauty."
   },
-  "mission": "To build software products that matter — solutions that are not just technically brilliant, but thoughtfully designed to create lasting impact.",
+  "mission": "To engineer software products that solve real problems with precision, reliability, and scale.",
   "values": [
     {
-      "title": "Growth",
-      "description": "We grow steadily, just like the snowflake plant — with patience, intention, and resilience."
+      "title": "Engineering Excellence",
+      "description": "We hold our code to the highest standards. Clean architecture, thorough testing, and continuous improvement define our engineering culture."
     },
     {
-      "title": "Innovation",
-      "description": "We question the status quo and build forward-thinking solutions that push boundaries."
+      "title": "Product Thinking",
+      "description": "Every feature we ship is grounded in user research and business impact. We build with purpose, not just technology."
     },
     {
-      "title": "Craft",
-      "description": "Every pixel and every line of code is a deliberate act of care. Quality is non-negotiable."
+      "title": "Reliability",
+      "description": "Our systems are designed for uptime and resilience. We architect for failure scenarios and optimize for performance at scale."
     },
     {
       "title": "Transparency",
-      "description": "We build trust through openness — with our team, our partners, and our community."
+      "description": "Open communication across teams, clear documentation, and honest timelines are how we build trust with every stakeholder."
     }
+  ],
+  "products": [
+    {
+      "name": "FlowBoard",
+      "description": "A collaborative project management tool built for distributed engineering teams. Real-time task tracking, sprint planning, and team analytics."
+    },
+    {
+      "name": "VaultKey",
+      "description": "Enterprise-grade secrets management and access control. Securely store, rotate, and audit API keys, credentials, and certificates."
+    },
+    {
+      "name": "PixelCraft",
+      "description": "A design-to-code platform that bridges the gap between designers and developers. Export production-ready components from design files."
+    },
+    {
+      "name": "DevNest",
+      "description": "Cloud-based development environments with pre-configured toolchains. Spin up isolated workspaces in seconds for any project."
+    }
+  ],
+  "techStack": [
+    "React", "Angular", "JavaScript", "TypeScript", "Node.js",
+    "MongoDB", "PostgreSQL", "Docker", "AWS", "Figma"
+  ],
+  "team": [
+    { "name": "Subramanian S", "role": "Founder & CEO" },
+    { "name": "Aarav K", "role": "Lead Engineer" },
+    { "name": "Meera R", "role": "Product Designer" }
   ]
 }

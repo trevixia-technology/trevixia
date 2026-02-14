@@ -1,137 +1,110 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { RiSeedlingLine, RiLightbulbLine, RiShieldCheckLine, RiArrowRightLine, RiSparklingLine } from 'react-icons/ri'
+import {
+  RiCodeSSlashLine, RiLightbulbLine, RiShieldCheckLine,
+  RiArrowRightLine, RiCheckLine
+} from 'react-icons/ri'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
 import company from '../../data/company.json'
 import styles from './Home.module.css'
 
-const features = [
+const capabilities = [
   {
-    icon: <RiSeedlingLine />,
-    iconClass: 'feature-icon-green',
-    title: 'Rooted in Nature',
-    text: 'Like the snowflake plant that thrives in any environment, our products are designed to adapt, grow, and flourish wherever they are deployed.',
+    icon: <RiCodeSSlashLine />,
+    title: 'Product Engineering',
+    text: 'Full-stack development of scalable web and mobile applications using modern frameworks and cloud-native architecture.',
   },
   {
     icon: <RiLightbulbLine />,
-    iconClass: 'feature-icon-warm',
-    title: 'Innovation First',
-    text: 'Every product we build is born from a deep understanding of real-world problems, crafted with cutting-edge technology and timeless design principles.',
+    title: 'Product Design',
+    text: 'User-centered design systems, prototyping, and interface development that aligns with business objectives.',
   },
   {
     icon: <RiShieldCheckLine />,
-    iconClass: 'feature-icon-coral',
-    title: 'Built to Last',
-    text: 'Reliability isn\'t an afterthought — it\'s embedded in our DNA. We ship products that stand the test of time and scale with your ambitions.',
+    title: 'Infrastructure & DevOps',
+    text: 'Automated CI/CD pipelines, cloud infrastructure management, and monitoring to ensure reliability at scale.',
   },
 ]
 
-const stats = [
-  { number: '10+', label: 'Products Built' },
-  { number: '50K+', label: 'Users Served' },
-  { number: '99.9%', label: 'Uptime' },
+const metrics = [
+  { value: '99.9%', label: 'System Uptime' },
+  { value: '10+', label: 'Products Shipped' },
+  { value: '50K+', label: 'Users Served' },
 ]
 
 export default function Home() {
   return (
     <PageTransition>
-      {/* ═══ HERO ═══ */}
+      {/* Hero */}
       <section className={styles.hero}>
-        <div className={styles['hero-bg']}>
-          <div className={styles['hero-gradient']} />
-          <div className={`${styles['hero-orb']} ${styles['hero-orb-1']}`} />
-          <div className={`${styles['hero-orb']} ${styles['hero-orb-2']}`} />
-          <div className={`${styles['hero-orb']} ${styles['hero-orb-3']}`} />
-        </div>
-
-        <div className={`container ${styles['hero-content']}`}>
+        <div className={styles['hero-bg']} />
+        <div className={`container ${styles['hero-inner']}`}>
           <motion.div
-            className={styles['hero-text']}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            className={styles['hero-content']}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            <div className={styles['hero-badge']}>
-              <span className={styles['hero-badge-dot']} />
-              {company.type} • {company.location.city}, {company.location.country}
+            <div className={styles['hero-label']}>
+              <span className={styles['hero-label-dot']} />
+              {company.type} — {company.location.city}, {company.location.country}
             </div>
 
             <h1 className={styles['hero-title']}>
-              {company.slogan.split('. ')[0]}.{' '}
-              <span className={styles['hero-title-accent']}>{company.slogan.split('. ')[1]}</span>
+              {company.slogan.split('. ')[0]}.<br />
+              <span className={styles['hero-accent']}>{company.slogan.split('. ')[1]}</span>
             </h1>
 
-            <p className={styles['hero-description']}>
+            <p className={styles['hero-desc']}>
               {company.description}
             </p>
 
             <div className={styles['hero-actions']}>
               <Link to="/products" className="btn btn-primary btn-lg">
-                Explore Products <RiArrowRightLine />
+                View Products <RiArrowRightLine />
               </Link>
               <Link to="/about" className="btn btn-outline btn-lg">
-                Our Story
+                About Us
               </Link>
-            </div>
-
-            <div className={styles['hero-stats']}>
-              {stats.map((s, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 + i * 0.15 }}
-                >
-                  <div className={styles['hero-stat-number']}>{s.number}</div>
-                  <div className={styles['hero-stat-label']}>{s.label}</div>
-                </motion.div>
-              ))}
             </div>
           </motion.div>
 
           <motion.div
-            className={styles['hero-visual']}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            className={styles['hero-metrics']}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <div className={styles['hero-plant-card']}>
-              <div className={`${styles['hero-plant-decoration']} ${styles['hero-plant-decoration-1']}`} />
-              <div className={`${styles['hero-plant-decoration']} ${styles['hero-plant-decoration-2']}`} />
-              <div className={styles['hero-plant-inner']}>
-                <div className={styles['hero-plant-emoji']}>🌿</div>
-                <div className={styles['hero-plant-name']}>{company.brand.plantName}</div>
-                <div className={styles['hero-plant-species']}>{company.brand.plantSpecies}</div>
+            {metrics.map((m, i) => (
+              <div key={i} className={styles.metric}>
+                <div className={styles['metric-value']}>{m.value}</div>
+                <div className={styles['metric-label']}>{m.label}</div>
               </div>
-            </div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* ═══ FEATURES ═══ */}
-      <section className={`section ${styles.features}`}>
+      {/* Capabilities */}
+      <section className={`section ${styles.capabilities}`}>
         <div className="container">
-          <AnimatedSection className="text-center">
-            <span className="section-label">
-              <RiSparklingLine /> Why Trevixia
-            </span>
-            <h2 className="section-title">Built Different, By Design</h2>
-            <p className="section-subtitle mx-auto">
-              We don't just ship code — we cultivate products that grow with intention,
-              adapting to cycles just like nature does.
+          <AnimatedSection>
+            <div className="section-label">What We Do</div>
+            <h2 className="section-title">Core Capabilities</h2>
+            <p className="section-subtitle">
+              End-to-end software product development, from concept and
+              architecture to production deployment and ongoing operations.
             </p>
           </AnimatedSection>
 
-          <div className={styles['features-grid']}>
-            {features.map((f, i) => (
-              <AnimatedSection key={i} delay={i * 0.15}>
-                <div className={`glass-card ${styles['feature-card']}`}>
-                  <div className={`${styles['feature-icon']} ${styles[f.iconClass]}`}>
-                    {f.icon}
-                  </div>
-                  <h3 className={styles['feature-title']}>{f.title}</h3>
-                  <p className={styles['feature-text']}>{f.text}</p>
+          <div className={styles['cap-grid']}>
+            {capabilities.map((c, i) => (
+              <AnimatedSection key={i} delay={i * 0.1}>
+                <div className={`card ${styles['cap-card']}`}>
+                  <div className={styles['cap-icon']}>{c.icon}</div>
+                  <h3>{c.title}</h3>
+                  <p>{c.text}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -139,60 +112,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ MISSION ═══ */}
-      <section className={`section ${styles.mission}`}>
+      {/* Why Trevixia */}
+      <section className={`section ${styles.why}`}>
         <div className="container">
-          <div className={styles['mission-grid']}>
+          <div className={styles['why-grid']}>
             <AnimatedSection>
-              <div className={styles['mission-visual']}>
-                <span className={styles['mission-visual-text']}>🌱</span>
-                <p className={styles['mission-visual-quote']}>
-                  "Like the Trevesia palmata, we believe in quiet strength —
-                  growing steadily, blooming beautifully, and leaving a lasting impression."
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={0.2}>
-              <span className="section-label">
-                <RiSeedlingLine /> Our Mission
-              </span>
-              <h2 className="section-title">Grow. Innovate. Impact.</h2>
-              <div className={styles['mission-text']}>
-                <p>
-                  {company.mission}
-                </p>
-                <p>
-                  From our roots in {company.location.city}, we're building a global product studio
-                  where every line of code and every pixel serves a purpose.
-                  Our name comes from the {company.brand.plantSpecies} — the {company.brand.plantName.toLowerCase()} —
-                  a symbol of resilience, beauty, and quiet strength.
-                </p>
-              </div>
-              <Link to="/about" className="btn btn-primary">
+              <div className="section-label">Why Trevixia</div>
+              <h2 className="section-title">Engineered for Impact</h2>
+              <p style={{ marginBottom: '1.5rem' }}>
+                {company.mission}
+              </p>
+              <ul className={styles['why-list']}>
+                <li><RiCheckLine className={styles['why-check']} /> Modern tech stack with proven frameworks</li>
+                <li><RiCheckLine className={styles['why-check']} /> Scalable architecture from day one</li>
+                <li><RiCheckLine className={styles['why-check']} /> Automated testing and deployment pipelines</li>
+                <li><RiCheckLine className={styles['why-check']} /> Transparent communication and delivery</li>
+              </ul>
+              <Link to="/about" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
                 Learn More <RiArrowRightLine />
               </Link>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.15}>
+              <div className={styles['why-visual']}>
+                <div className={styles['why-visual-inner']}>
+                  <div className={styles['why-code-block']}>
+                    <div className={styles['why-code-dots']}>
+                      <span /><span /><span />
+                    </div>
+                    <pre className={styles['why-code']}>
+{`// trevixia.config
+{
+  "quality": "production",
+  "uptime": "99.9%",
+  "scale": "infinite",
+  "location": "${company.location.city}"
+}`}
+                    </pre>
+                  </div>
+                </div>
+              </div>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* ═══ CTA ═══ */}
+      {/* CTA */}
       <section className={`section ${styles.cta}`}>
         <div className="container">
           <AnimatedSection>
-            <div className={styles['cta-content']}>
-              <h2>Ready to Build Something Beautiful?</h2>
+            <div className={styles['cta-inner']}>
+              <h2>Build Your Next Product With Us</h2>
               <p>
-                Whether you have an idea, a challenge, or a vision — we'd love to
-                help you bring it to life. Let's create something remarkable together.
+                We partner with startups and enterprises to ship software
+                products that users depend on.
               </p>
               <div className={styles['cta-actions']}>
-                <Link to="/contact" className={styles['btn-white']}>
-                  Start a Conversation
+                <Link to="/contact" className={styles['cta-btn-primary']}>
+                  Contact Us
                 </Link>
-                <Link to="/products" className={styles['btn-white-outline']}>
-                  View Products
+                <Link to="/products" className={styles['cta-btn-outline']}>
+                  Explore Products
                 </Link>
               </div>
             </div>
