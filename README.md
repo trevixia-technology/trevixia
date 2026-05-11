@@ -6,7 +6,7 @@ Trevixia is a product-focused software company that designs and engineers robust
 
 ## Live Site
 
-[https://trevixia-technology.github.io/trevixia/](https://trevixia-technology.github.io/trevixia/)
+[https://trevixia.github.io/trevixia/](https://trevixia.github.io/trevixia/)
 
 ## Products
 
@@ -38,7 +38,7 @@ npm run build
 
 - **Email:** trevixia.tech@gmail.com
 - **Location:** Chennai, Tamil Nadu, India
-- **GitHub:** [trevixia-technology](https://github.com/trevixia-technology)
+- **GitHub:** [trevixia](https://github.com/trevixia)
 
 ## License
 
