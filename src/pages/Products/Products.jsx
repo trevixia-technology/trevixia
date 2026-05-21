@@ -2,6 +2,7 @@ import { RiArrowRightLine } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
+import SEO from '../../components/SEO/SEO'
 import company from '../../data/company.json'
 import styles from './Products.module.css'
 
@@ -31,6 +32,13 @@ const process = [
 export default function Products() {
   return (
     <PageTransition>
+      <SEO
+        title="Products"
+        description="Explore Trevixia product initiatives, engineering process, and technology stack used to build scalable digital solutions."
+        path="/products"
+        keywords="software products, product development, startup products, tech stack, trevixia"
+      />
+
       {/* Header */}
       <section className={styles.header}>
         <div className="container">

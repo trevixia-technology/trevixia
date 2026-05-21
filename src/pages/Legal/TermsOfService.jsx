@@ -1,5 +1,6 @@
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
+import SEO from '../../components/SEO/SEO'
 import company from '../../data/company.json'
 import styles from './Legal.module.css'
 
@@ -8,6 +9,14 @@ const lastUpdated = 'May 21, 2026'
 export default function TermsOfService() {
   return (
     <PageTransition>
+      <SEO
+        title="Terms of Service"
+        description="Review Trevixia's Terms of Service governing access and use of our website and content."
+        path="/terms"
+        keywords="terms of service, trevixia terms, website terms"
+        type="article"
+      />
+
       <section className={styles.page}>
         <div className="container">
           <AnimatedSection>

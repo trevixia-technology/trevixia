@@ -1,5 +1,6 @@
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
+import SEO from '../../components/SEO/SEO'
 import company from '../../data/company.json'
 import styles from './Legal.module.css'
 
@@ -8,6 +9,14 @@ const lastUpdated = 'May 21, 2026'
 export default function PrivacyPolicy() {
   return (
     <PageTransition>
+      <SEO
+        title="Privacy Policy"
+        description="Read Trevixia's Privacy Policy to understand how we collect, use, and protect personal information."
+        path="/privacy-policy"
+        keywords="privacy policy, trevixia privacy, data handling"
+        type="article"
+      />
+
       <section className={styles.page}>
         <div className="container">
           <AnimatedSection>

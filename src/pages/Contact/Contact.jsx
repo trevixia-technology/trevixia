@@ -1,12 +1,20 @@
 import { RiMailLine, RiMapPinLine, RiGlobalLine } from 'react-icons/ri'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
+import SEO from '../../components/SEO/SEO'
 import company from '../../data/company.json'
 import styles from './Contact.module.css'
 
 export default function Contact() {
   return (
     <PageTransition>
+      <SEO
+        title="Contact Trevixia"
+        description="Contact Trevixia for product engineering, software development, and collaboration inquiries."
+        path="/contact"
+        keywords="contact trevixia, software consultation, product engineering inquiry"
+      />
+
       {/* Header */}
       <section className={styles.header}>
         <div className="container">

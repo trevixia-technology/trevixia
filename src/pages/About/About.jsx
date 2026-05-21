@@ -4,6 +4,7 @@ import {
 } from 'react-icons/ri'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
+import SEO from '../../components/SEO/SEO'
 import company from '../../data/company.json'
 import styles from './About.module.css'
 
@@ -41,6 +42,13 @@ const trustPractices = [
 export default function About() {
   return (
     <PageTransition>
+      <SEO
+        title="About Trevixia"
+        description="Learn about Trevixia's mission, engineering principles, and practical security-first approach to building reliable software products."
+        path="/about"
+        keywords="about trevixia, software company mission, engineering values, startup team"
+      />
+
       {/* Header */}
       <section className={styles.header}>
         <div className="container">

@@ -6,6 +6,7 @@ import {
 } from 'react-icons/ri'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
+import SEO from '../../components/SEO/SEO'
 import company from '../../data/company.json'
 import styles from './Home.module.css'
 
@@ -55,6 +56,13 @@ const metrics = [
 export default function Home() {
   return (
     <PageTransition>
+      <SEO
+        title="Product-Focused Software Company"
+        description={company.description}
+        path="/"
+        keywords="product engineering, software tools, startup technology, Chennai software company, scalable applications"
+      />
+
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles['hero-bg']} />

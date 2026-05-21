@@ -1,5 +1,6 @@
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
+import SEO from '../../components/SEO/SEO'
 import company from '../../data/company.json'
 import styles from './Legal.module.css'
 
@@ -8,6 +9,14 @@ const lastUpdated = 'May 21, 2026'
 export default function CookiePolicy() {
   return (
     <PageTransition>
+      <SEO
+        title="Cookie Policy"
+        description="Understand how Trevixia uses cookies and similar technologies to improve functionality and performance."
+        path="/cookie-policy"
+        keywords="cookie policy, trevixia cookies, website cookies"
+        type="article"
+      />
+
       <section className={styles.page}>
         <div className="container">
           <AnimatedSection>
