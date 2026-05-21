@@ -4,9 +4,12 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
 
+const basePath = import.meta.env.BASE_URL
+const routerBase = basePath === '/' ? undefined : basePath.replace(/\/$/, '')
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/trevixia">
+    <BrowserRouter basename={routerBase}>
       <App />
     </BrowserRouter>
   </React.StrictMode>

@@ -12,13 +12,17 @@ const links = [
   { label: 'Contact', to: '/contact' },
 ]
 
+const logoSrc = `${import.meta.env.BASE_URL}logo/trevixia-tbg.png`
+
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.top}>
           <div className={styles.brand}>
-            <Link to="/" className={styles.logo}>{company.name}</Link>
+            <Link to="/" className={styles.logo}>
+              <img src={logoSrc} alt="Trevixia" className={styles['logo-image']} />
+            </Link>
             <p className={styles.tagline}>{company.slogan}</p>
           </div>
 

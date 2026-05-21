@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { RiLeafLine } from 'react-icons/ri'
 import { motion } from 'framer-motion'
 import styles from './Navbar.module.css'
 
@@ -10,6 +9,8 @@ const navItems = [
   { label: 'Products', path: '/products' },
   { label: 'Contact', path: '/contact' },
 ]
+
+const logoSrc = `${import.meta.env.BASE_URL}logo/trevixia-tbg.png`
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -30,10 +31,11 @@ export default function Navbar() {
     >
       <div className={styles['navbar-inner']}>
         <Link to="/" className={styles['nav-logo']}>
-          <span className={styles['nav-logo-icon']}>
-            <RiLeafLine />
-          </span>
-          Trevixia
+          <img
+            src={logoSrc}
+            alt="Trevixia"
+            className={styles['nav-logo-image']}
+          />
         </Link>
 
         <button

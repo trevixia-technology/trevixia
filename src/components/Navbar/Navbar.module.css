@@ -31,24 +31,14 @@
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-sans);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--clr-primary);
-  letter-spacing: -0.02em;
+  height: 100%;
+  padding: 0.25rem 0;
 }
 
-.nav-logo-icon {
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--clr-primary);
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1rem;
+.nav-logo-image {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Nav Links */
@@ -121,6 +111,14 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-inner {
+    padding: 0 var(--space-lg);
+  }
+
+  .nav-logo-image {
+    height: 80px;
+  }
+
   .nav-toggle {
     display: flex;
   }

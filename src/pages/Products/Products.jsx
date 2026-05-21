@@ -9,6 +9,7 @@ const products = company.products.map((p) => ({
   ...p,
   tags: getProductTags(p.name),
 }))
+const hasProducts = products.length > 0
 
 function getProductTags(name) {
   switch (name) {
@@ -50,23 +51,32 @@ export default function Products() {
       {/* Product Grid */}
       <section className={`section ${styles.products}`}>
         <div className="container">
-          <div className={styles['product-grid']}>
-            {products.map((p, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <div className={`card ${styles['product-card']}`}>
-                  <div className={styles['product-top']}>
-                    <h3>{p.name}</h3>
-                    <p>{p.description}</p>
+          {hasProducts ? (
+            <div className={styles['product-grid']}>
+              {products.map((p, i) => (
+                <AnimatedSection key={i} delay={i * 0.1}>
+                  <div className={`card ${styles['product-card']}`}>
+                    <div className={styles['product-top']}>
+                      <h3>{p.name}</h3>
+                      <p>{p.description}</p>
+                    </div>
+                    <div className={styles['product-tags']}>
+                      {p.tags.map((t, j) => (
+                        <span key={j} className={styles.tag}>{t}</span>
+                      ))}
+                    </div>
                   </div>
-                  <div className={styles['product-tags']}>
-                    {p.tags.map((t, j) => (
-                      <span key={j} className={styles.tag}>{t}</span>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
+                </AnimatedSection>
+              ))}
+            </div>
+          ) : (
+            <AnimatedSection>
+              <div className={`card ${styles['empty-state']}`}>
+                <h3>Projects will be listed soon</h3>
+                <p>We are currently updating this section. Please check back later.</p>
+              </div>
+            </AnimatedSection>
+          )}
         </div>
       </section>
 

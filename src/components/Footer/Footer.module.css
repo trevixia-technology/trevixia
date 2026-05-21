@@ -12,18 +12,30 @@
 
 .top {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
+.brand {
+  text-align: left;
+}
+
 .logo {
+  display: inline-flex;
+  align-items: center;
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--clr-primary);
   text-decoration: none;
   letter-spacing: -0.02em;
+}
+
+.logo-image {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
 
 .tagline {
@@ -35,6 +47,9 @@
 .nav {
   display: flex;
   gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -65,8 +80,10 @@
 
 .bottom {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
   padding-top: 1.5rem;
   border-top: 1px solid var(--clr-border);
   font-size: 0.8125rem;
