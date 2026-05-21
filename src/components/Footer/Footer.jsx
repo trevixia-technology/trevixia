@@ -12,6 +12,12 @@ const links = [
   { label: 'Contact', to: '/contact' },
 ]
 
+const legalLinks = [
+  { label: 'Privacy Policy', to: '/privacy-policy' },
+  { label: 'Terms of Service', to: '/terms' },
+  { label: 'Cookie Policy', to: '/cookie-policy' },
+]
+
 const logoSrc = `${import.meta.env.BASE_URL}logo/trevixia-tbg.png`
 
 export default function Footer() {
@@ -42,10 +48,20 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <span>&copy; {new Date().getFullYear()} {company.name}. All rights reserved.</span>
-          <span className={styles.location}>
-            {company.location.city}, {company.location.country}
-          </span>
+          <div className={styles['bottom-left']}>
+            <span>&copy; {new Date().getFullYear()} {company.name}. All rights reserved.</span>
+            <span className={styles.location}>
+              {company.location.city}, {company.location.country}
+            </span>
+          </div>
+
+          <nav className={styles.legal} aria-label="Legal">
+            {legalLinks.map((l) => (
+              <Link key={l.to} to={l.to} className={styles['legal-link']}>
+                {l.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

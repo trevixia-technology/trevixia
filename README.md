@@ -6,7 +6,7 @@ Trevixia is a product-focused software company that designs and engineers robust
 
 ## Live Site
 
-[https://trevixia.github.io/trevixia/](https://trevixia.github.io/trevixia/)
+[https://trevixia-tech.github.io/trevixia/](https://trevixia-tech.github.io/trevixia/)
 
 ## Products
 

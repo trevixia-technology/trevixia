@@ -140,6 +140,46 @@
   margin-bottom: 1rem;
 }
 
+/* ─── Trust ─── */
+.trust {
+  background: var(--clr-surface);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.trust-card {
+  height: 100%;
+}
+
+.trust-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--clr-accent);
+  font-size: 1.1rem;
+  margin-bottom: 0.875rem;
+}
+
+.trust-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.trust-card p {
+  color: var(--clr-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
 /* ─── Why Trevixia ─── */
 .why {
   background: var(--clr-surface);
@@ -300,6 +340,10 @@
   }
 
   .cap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-grid {
     grid-template-columns: 1fr;
   }
 

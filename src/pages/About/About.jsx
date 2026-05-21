@@ -1,6 +1,6 @@
 import {
   RiTeamLine, RiRocketLine, RiShieldCheckLine,
-  RiEyeLine, RiTimeLine
+  RiEyeLine
 } from 'react-icons/ri'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
@@ -30,6 +30,13 @@ const valueCopy = {
   'Transparency':
     'Open communication with stakeholders at every stage — from sprint planning to production deployments.',
 }
+
+const trustPractices = [
+  'Security requirements are considered during planning and architecture decisions.',
+  'Access controls and least-privilege principles are applied in implementation.',
+  'Encryption and secure transport are used for sensitive data handling.',
+  'Operational monitoring and incident response workflows are part of delivery.',
+]
 
 export default function About() {
   return (
@@ -91,6 +98,32 @@ export default function About() {
                   </div>
                   <h3>{v.title}</h3>
                   <p>{v.description}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Security Foundation */}
+      <section className={`section ${styles.trust}`}>
+        <div className="container">
+          <AnimatedSection>
+            <div className="section-label">Security & Compliance Foundation</div>
+            <h2 className="section-title">Practical Controls Without Overclaiming</h2>
+            <p className="section-subtitle">
+              We are continuously strengthening governance and controls. At present,
+              we focus on practical security and privacy practices rather than claiming
+              certifications we do not yet hold.
+            </p>
+          </AnimatedSection>
+
+          <div className={styles['trust-grid']}>
+            {trustPractices.map((item, index) => (
+              <AnimatedSection key={index} delay={index * 0.08}>
+                <div className={styles['trust-item']}>
+                  <span className={styles['trust-dot']} aria-hidden="true" />
+                  <p>{item}</p>
                 </div>
               </AnimatedSection>
             ))}

@@ -27,6 +27,25 @@ const capabilities = [
   },
 ]
 
+const trustBadges = [
+  {
+    title: 'Security-First Architecture',
+    text: 'Threat-aware design practices are applied during planning, implementation, and review.',
+  },
+  {
+    title: 'Data Protection Practices',
+    text: 'Sensitive data is handled with encryption, controlled access, and least-privilege principles.',
+  },
+  {
+    title: 'Operational Reliability',
+    text: 'Monitoring, backups, and incident-response workflows are part of standard operations.',
+  },
+  {
+    title: 'Privacy-Conscious Delivery',
+    text: 'We design systems to minimize unnecessary data collection and support clear governance.',
+  },
+]
+
 const metrics = [
   { value: '99.9%', label: 'System Uptime' },
   { value: '10+', label: 'Products Shipped' },
@@ -105,6 +124,34 @@ export default function Home() {
                   <div className={styles['cap-icon']}>{c.icon}</div>
                   <h3>{c.title}</h3>
                   <p>{c.text}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Security & Compliance Foundation */}
+      <section className={`section ${styles.trust}`}>
+        <div className="container">
+          <AnimatedSection>
+            <div className="section-label">Security & Compliance Foundation</div>
+            <h2 className="section-title">Built With Responsible Practices</h2>
+            <p className="section-subtitle">
+              We do not claim formal certifications at this stage. We follow practical,
+              production-minded controls that improve trust, privacy, and resilience.
+            </p>
+          </AnimatedSection>
+
+          <div className={styles['trust-grid']}>
+            {trustBadges.map((item, i) => (
+              <AnimatedSection key={item.title} delay={i * 0.08}>
+                <div className={`card ${styles['trust-card']}`}>
+                  <div className={styles['trust-icon']}>
+                    <RiShieldCheckLine />
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
                 </div>
               </AnimatedSection>
             ))}

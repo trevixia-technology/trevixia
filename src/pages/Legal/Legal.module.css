@@ -1,0 +1,65 @@
+.page {
+  padding: calc(var(--nav-height) + 3.5rem) 0 4rem;
+  background: var(--clr-bg);
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  color: var(--clr-secondary);
+  max-width: 760px;
+}
+
+.lastUpdated {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--clr-muted);
+}
+
+.content {
+  max-width: 860px;
+}
+
+.section {
+  margin-top: 1.75rem;
+}
+
+.section h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.section p,
+.section li {
+  color: var(--clr-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.section ul {
+  margin-top: 0.5rem;
+  padding-left: 1.125rem;
+}
+
+.section li + li {
+  margin-top: 0.4rem;
+}
+
+.section a {
+  color: var(--clr-accent);
+  text-decoration: none;
+}
+
+.section a:hover {
+  text-decoration: underline;
+}

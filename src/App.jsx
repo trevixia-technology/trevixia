@@ -6,6 +6,9 @@ import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Products from './pages/Products/Products'
 import Contact from './pages/Contact/Contact'
+import PrivacyPolicy from './pages/Legal/PrivacyPolicy'
+import TermsOfService from './pages/Legal/TermsOfService'
+import CookiePolicy from './pages/Legal/CookiePolicy'
 
 function App() {
   const location = useLocation()
@@ -19,6 +22,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
       </AnimatePresence>
       <Footer />
