@@ -38,8 +38,10 @@
 .mission-block {
   padding: 2rem;
   border: 1px solid var(--clr-border);
+  background: #ffffff;
   border-radius: 12px;
   height: 100%;
+  color: var(--clr-text);
 }
 
 .mission-block h3 {
@@ -72,12 +74,16 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  background: #ffffff;
+  border-color: var(--clr-border);
+  color: var(--clr-text);
 }
 
 .value-card h3 {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: var(--clr-primary);
 }
 
 .value-card p {
@@ -118,7 +124,8 @@
   padding: 1rem;
   border: 1px solid var(--clr-border);
   border-radius: 10px;
-  background: var(--clr-surface);
+  background: #ffffff;
+  color: var(--clr-text);
 }
 
 .trust-dot {
@@ -186,6 +193,7 @@
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
+  color: var(--clr-primary);
 }
 
 .timeline-content p {
@@ -219,12 +227,16 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background: #ffffff;
+  border-color: var(--clr-border);
+  color: var(--clr-text);
 }
 
 .team-card h3 {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
+  color: var(--clr-primary);
 }
 
 .team-avatar {

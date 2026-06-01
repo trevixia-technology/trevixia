@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 const SITE_NAME = 'Trevixia'
 const SITE_URL = 'https://trevixia-tech.github.io/trevixia'
-const DEFAULT_IMAGE = `${SITE_URL}/logo/trevixia-tbg.png`
+const DEFAULT_IMAGE = `${SITE_URL}/logo/trevixia-tbg-2.png`
 
 function upsertMeta(attr, key, value) {
   if (!value) return

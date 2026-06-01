@@ -5,12 +5,13 @@ import styles from './Navbar.module.css'
 
 const navItems = [
   { label: 'Home', path: '/' },
+  { label: 'Labs', path: '/labs' },
+  { label: 'Tech', path: '/tech' },
   { label: 'About', path: '/about' },
-  { label: 'Products', path: '/products' },
   { label: 'Contact', path: '/contact' },
 ]
 
-const logoSrc = `${import.meta.env.BASE_URL}logo/trevixia-tbg.png`
+const logoSrc = `${import.meta.env.BASE_URL}logo/trevixia-tbg-2.png`
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)

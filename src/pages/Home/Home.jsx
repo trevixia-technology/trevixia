@@ -1,235 +1,131 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import {
-  RiCodeSSlashLine, RiLightbulbLine, RiShieldCheckLine,
-  RiArrowRightLine, RiCheckLine
-} from 'react-icons/ri'
+import { RiArrowRightLine, RiCpuLine, RiBox3Line, RiLeafLine } from 'react-icons/ri'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
 import SEO from '../../components/SEO/SEO'
-import company from '../../data/company.json'
 import styles from './Home.module.css'
 
-const capabilities = [
-  {
-    icon: <RiCodeSSlashLine />,
-    title: 'Product Engineering',
-    text: 'Full-stack development of scalable web and mobile applications using modern frameworks and cloud-native architecture.',
-  },
-  {
-    icon: <RiLightbulbLine />,
-    title: 'Product Design',
-    text: 'User-centered design systems, prototyping, and interface development that aligns with business objectives.',
-  },
-  {
-    icon: <RiShieldCheckLine />,
-    title: 'Infrastructure & DevOps',
-    text: 'Automated CI/CD pipelines, cloud infrastructure management, and monitoring to ensure reliability at scale.',
-  },
+const buildItems = [
+  '3D Printed Prototypes',
+  'Custom Hardware Solutions',
+  'Web Applications',
+  'Internal Business Tools',
+  'MVP Development',
 ]
 
-const trustBadges = [
-  {
-    title: 'Security-First Architecture',
-    text: 'Threat-aware design practices are applied during planning, implementation, and review.',
-  },
-  {
-    title: 'Data Protection Practices',
-    text: 'Sensitive data is handled with encryption, controlled access, and least-privilege principles.',
-  },
-  {
-    title: 'Operational Reliability',
-    text: 'Monitoring, backups, and incident-response workflows are part of standard operations.',
-  },
-  {
-    title: 'Privacy-Conscious Delivery',
-    text: 'We design systems to minimize unnecessary data collection and support clear governance.',
-  },
-]
-
-const metrics = [
-  { value: '99.9%', label: 'System Uptime' },
-  { value: '10+', label: 'Products Shipped' },
-  { value: '50K+', label: 'Users Served' },
-]
+const particles = Array.from({ length: 16 }, (_, index) => ({
+  id: index,
+  size: 2 + (index % 3),
+  x: `${(index * 7) % 100}%`,
+  duration: 18 + (index % 5) * 4,
+  delay: (index % 4) * 1.8,
+}))
 
 export default function Home() {
   return (
     <PageTransition>
       <SEO
-        title="Product-Focused Software Company"
-        description={company.description}
+        title="Trevixia Control Center"
+        description="Control center for Trevixia modules across 3D Labs and Technologies."
         path="/"
-        keywords="product engineering, software tools, startup technology, Chennai software company, scalable applications"
+        keywords="Trevixia dashboard, 3D labs, software systems, engineering startup Chennai"
       />
 
-      {/* Hero */}
       <section className={styles.hero}>
-        <div className={styles['hero-bg']} />
-        <div className={`container ${styles['hero-inner']}`}>
-          <motion.div
-            className={styles['hero-content']}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className={styles['hero-label']}>
-              <span className={styles['hero-label-dot']} />
-              {company.type} — {company.location.city}, {company.location.country}
-            </div>
+        <motion.div
+          className={styles.wave}
+          animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+          transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
+        />
 
-            <h1 className={styles['hero-title']}>
-              {company.slogan.split('. ')[0]}.<br />
-              <span className={styles['hero-accent']}>{company.slogan.split('. ')[1]}</span>
-            </h1>
-
-            <p className={styles['hero-desc']}>
-              {company.description}
-            </p>
-
-            <div className={styles['hero-actions']}>
-              <Link to="/products" className="btn btn-primary btn-lg">
-                View Products <RiArrowRightLine />
-              </Link>
-              <Link to="/about" className="btn btn-outline btn-lg">
-                About Us
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className={styles['hero-metrics']}
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            {metrics.map((m, i) => (
-              <div key={i} className={styles.metric}>
-                <div className={styles['metric-value']}>{m.value}</div>
-                <div className={styles['metric-label']}>{m.label}</div>
-              </div>
-            ))}
-          </motion.div>
+        <div className={styles.particles} aria-hidden="true">
+          {particles.map((particle) => (
+            <motion.span
+              key={particle.id}
+              className={styles.particle}
+              style={{ left: particle.x, width: particle.size, height: particle.size }}
+              animate={{ y: ['0%', '-180%'], opacity: [0, 0.45, 0] }}
+              transition={{
+                duration: particle.duration,
+                repeat: Infinity,
+                delay: particle.delay,
+                ease: 'linear',
+              }}
+            />
+          ))}
         </div>
-      </section>
 
-      {/* Capabilities */}
-      <section className={`section ${styles.capabilities}`}>
-        <div className="container">
+        <div className={`container ${styles.heroInner}`}>
           <AnimatedSection>
-            <div className="section-label">What We Do</div>
-            <h2 className="section-title">Core Capabilities</h2>
-            <p className="section-subtitle">
-              End-to-end software product development, from concept and
-              architecture to production deployment and ongoing operations.
+            <div className={styles.microTag}>
+              <RiLeafLine /> Startup building 3D solutions + software systems
+            </div>
+            <h1 className={styles.title}>Inspired by Nature. Built for Technology.</h1>
+            <p className={styles.subtitle}>
+              Trevixia builds practical engineering systems across physical and digital domains.
             </p>
           </AnimatedSection>
-
-          <div className={styles['cap-grid']}>
-            {capabilities.map((c, i) => (
-              <AnimatedSection key={i} delay={i * 0.1}>
-                <div className={`card ${styles['cap-card']}`}>
-                  <div className={styles['cap-icon']}>{c.icon}</div>
-                  <h3>{c.title}</h3>
-                  <p>{c.text}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Security & Compliance Foundation */}
-      <section className={`section ${styles.trust}`}>
+      <section className={`section ${styles.modules}`}>
         <div className="container">
-          <AnimatedSection>
-            <div className="section-label">Security & Compliance Foundation</div>
-            <h2 className="section-title">Built With Responsible Practices</h2>
-            <p className="section-subtitle">
-              We do not claim formal certifications at this stage. We follow practical,
-              production-minded controls that improve trust, privacy, and resilience.
-            </p>
-          </AnimatedSection>
-
-          <div className={styles['trust-grid']}>
-            {trustBadges.map((item, i) => (
-              <AnimatedSection key={item.title} delay={i * 0.08}>
-                <div className={`card ${styles['trust-card']}`}>
-                  <div className={styles['trust-icon']}>
-                    <RiShieldCheckLine />
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Trevixia */}
-      <section className={`section ${styles.why}`}>
-        <div className="container">
-          <div className={styles['why-grid']}>
+          <div className={styles.moduleGrid}>
             <AnimatedSection>
-              <div className="section-label">Why Trevixia</div>
-              <h2 className="section-title">Engineered for Impact</h2>
-              <p style={{ marginBottom: '1.5rem' }}>
-                {company.mission}
-              </p>
-              <ul className={styles['why-list']}>
-                <li><RiCheckLine className={styles['why-check']} /> Modern tech stack with proven frameworks</li>
-                <li><RiCheckLine className={styles['why-check']} /> Scalable architecture from day one</li>
-                <li><RiCheckLine className={styles['why-check']} /> Automated testing and deployment pipelines</li>
-                <li><RiCheckLine className={styles['why-check']} /> Transparent communication and delivery</li>
-              </ul>
-              <Link to="/about" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
-                Learn More <RiArrowRightLine />
-              </Link>
+              <article className={styles.moduleCard}>
+                <span className={styles.moduleIcon}><RiBox3Line /></span>
+                <h2>Trevixia 3D Labs</h2>
+                <p>Physical prototyping, 3D printing, product development.</p>
+                <Link to="/labs" className={styles.moduleBtn}>
+                  Explore Labs <RiArrowRightLine />
+                </Link>
+              </article>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.15}>
-              <div className={styles['why-visual']}>
-                <div className={styles['why-visual-inner']}>
-                  <div className={styles['why-code-block']}>
-                    <div className={styles['why-code-dots']}>
-                      <span /><span /><span />
-                    </div>
-                    <pre className={styles['why-code']}>
-{`// trevixia.config
-{
-  "quality": "production",
-  "uptime": "99.9%",
-  "scale": "infinite",
-  "location": "${company.location.city}"
-}`}
-                    </pre>
-                  </div>
-                </div>
-              </div>
+            <AnimatedSection delay={0.1}>
+              <article className={`${styles.moduleCard} ${styles.techCard}`}>
+                <span className={styles.moduleIcon}><RiCpuLine /></span>
+                <h2>Trevixia Technologies</h2>
+                <p>Software systems, web apps, automation, platforms.</p>
+                <Link to="/tech" className={styles.moduleBtn}>
+                  Explore Tech <RiArrowRightLine />
+                </Link>
+              </article>
             </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className={`section ${styles.cta}`}>
+      <section className={`section ${styles.about}`}>
         <div className="container">
           <AnimatedSection>
-            <div className={styles['cta-inner']}>
-              <h2>Build Your Next Product With Us</h2>
-              <p>
-                We partner with startups and enterprises to ship software
-                products that users depend on.
-              </p>
-              <div className={styles['cta-actions']}>
-                <Link to="/contact" className={styles['cta-btn-primary']}>
-                  Contact Us
-                </Link>
-                <Link to="/products" className={styles['cta-btn-outline']}>
-                  Explore Products
-                </Link>
-              </div>
+            <div className="section-label">About Snapshot</div>
+            <p className={styles.aboutText}>
+              Trevixia is an early-stage engineering startup focused on building real-world solutions by
+              combining hardware prototyping and software systems.
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <section className={`section ${styles.buildStrip}`}>
+        <div className="container">
+          <AnimatedSection>
+            <div className="section-label">What We Build</div>
+            <div className={styles.chips}>
+              {buildItems.map((item, index) => (
+                <motion.div
+                  key={item}
+                  className={styles.chip}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.5, delay: index * 0.06 }}
+                >
+                  {item}
+                </motion.div>
+              ))}
             </div>
           </AnimatedSection>
         </div>

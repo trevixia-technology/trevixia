@@ -37,12 +37,16 @@
   display: flex;
   gap: 1rem;
   align-items: flex-start;
+  background: #ffffff;
+  border-color: var(--clr-border);
+  color: var(--clr-text);
 }
 
 .info-card h3 {
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
+  color: var(--clr-primary);
 }
 
 .info-icon {
@@ -78,11 +82,18 @@
   font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 0.375rem;
+  color: var(--clr-primary);
 }
 
 .notice-card p {
   color: var(--clr-secondary);
   font-size: 0.9375rem;
+}
+
+.notice-card {
+  background: #ffffff;
+  border-color: var(--clr-border);
+  color: var(--clr-text);
 }
 
 /* ─── Responsive ─── */

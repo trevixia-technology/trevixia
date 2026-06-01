@@ -7,8 +7,9 @@ import styles from './Footer.module.css'
 
 const links = [
   { label: 'Home', to: '/' },
+  { label: 'Labs', to: '/labs' },
+  { label: 'Tech', to: '/tech' },
   { label: 'About', to: '/about' },
-  { label: 'Products', to: '/products' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -18,7 +19,7 @@ const legalLinks = [
   { label: 'Cookie Policy', to: '/cookie-policy' },
 ]
 
-const logoSrc = `${import.meta.env.BASE_URL}logo/trevixia-tbg.png`
+const logoSrc = `${import.meta.env.BASE_URL}logo/trevixia-tbg-2.png`
 
 export default function Footer() {
   return (
@@ -30,6 +31,7 @@ export default function Footer() {
               <img src={logoSrc} alt="Trevixia" className={styles['logo-image']} />
             </Link>
             <p className={styles.tagline}>{company.slogan}</p>
+            <p className={styles.tagline}>A startup building practical systems across physical and digital engineering.</p>
           </div>
 
           <nav className={styles.nav}>
