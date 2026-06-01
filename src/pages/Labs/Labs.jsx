@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { RiBox3Line, RiToolsLine, RiSettings4Line } from 'react-icons/ri'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
@@ -34,11 +33,7 @@ export default function Labs() {
       />
 
       <section className={styles.hero}>
-        <motion.div
-          className={styles.wireframe}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 36, repeat: Infinity, ease: 'linear' }}
-        />
+        <div className={styles.wireframe} />
         <div className={`container ${styles.heroInner}`}>
           <AnimatedSection>
             <div className="section-label">Physical Engineering</div>

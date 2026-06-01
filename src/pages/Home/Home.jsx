@@ -33,24 +33,19 @@ export default function Home() {
       />
 
       <section className={styles.hero}>
-        <motion.div
-          className={styles.wave}
-          animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-          transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
-        />
+        <div className={styles.wave} />
 
         <div className={styles.particles} aria-hidden="true">
           {particles.map((particle) => (
-            <motion.span
+            <span
               key={particle.id}
               className={styles.particle}
-              style={{ left: particle.x, width: particle.size, height: particle.size }}
-              animate={{ y: ['0%', '-180%'], opacity: [0, 0.45, 0] }}
-              transition={{
-                duration: particle.duration,
-                repeat: Infinity,
-                delay: particle.delay,
-                ease: 'linear',
+              style={{
+                left: particle.x,
+                width: particle.size,
+                height: particle.size,
+                '--duration': `${particle.duration}s`,
+                '--delay': `${particle.delay}s`,
               }}
             />
           ))}

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { RiCodeBoxLine, RiDatabase2Line, RiRepeat2Line } from 'react-icons/ri'
 import PageTransition from '../../components/PageTransition/PageTransition'
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection'
@@ -34,11 +33,7 @@ export default function Tech() {
       />
 
       <section className={styles.hero}>
-        <motion.div
-          className={styles.nodes}
-          animate={{ opacity: [0.35, 0.55, 0.35] }}
-          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-        />
+        <div className={styles.nodes} />
         <div className={`container ${styles.heroInner}`}>
           <AnimatedSection>
             <div className="section-label">Digital Engineering</div>

@@ -15,7 +15,8 @@
     radial-gradient(circle at 75% 60%, rgba(106, 110, 255, 0.16), transparent 34%),
     linear-gradient(120deg, rgba(45, 112, 125, 0.1), rgba(83, 76, 180, 0.1), rgba(30, 88, 123, 0.1));
   background-size: 150% 150%;
-  filter: blur(20px);
+  animation: waveShift 24s ease-in-out infinite;
+  will-change: transform;
 }
 
 .particles {
@@ -31,6 +32,35 @@
   bottom: -6%;
   border-radius: 999px;
   background: rgba(71, 109, 145, 0.28);
+  animation: particleRise var(--duration) linear infinite;
+  animation-delay: var(--delay);
+  will-change: transform, opacity;
+}
+
+@keyframes waveShift {
+  0%, 100% { transform: translate3d(-1.5%, 0, 0); }
+  50% { transform: translate3d(1.5%, -1%, 0); }
+}
+
+@keyframes particleRise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate3d(0, -180%, 0);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave,
+  .particle {
+    animation: none;
+  }
 }
 
 .heroInner {

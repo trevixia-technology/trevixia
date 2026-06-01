@@ -39,6 +39,19 @@
   box-shadow:
     0 0 0 14px rgba(141, 191, 149, 0.06),
     0 0 0 34px rgba(141, 191, 149, 0.03);
+  animation: wireframeSpin 36s linear infinite;
+  will-change: transform;
+}
+
+@keyframes wireframeSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wireframe {
+    animation: none;
+  }
 }
 
 .main {
